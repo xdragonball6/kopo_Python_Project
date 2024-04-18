@@ -11,10 +11,6 @@
 <div align=center>
 
 <br/>
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=xdragonball6&layout=pie)](https://github.com/anuraghazra/github-readme-stats)
-
-![xdragonball6's github stats](https://github-readme-stats.vercel.app/api?username=xdragonball6&show_icons=true)
 </div>
 </div>
 <!---
