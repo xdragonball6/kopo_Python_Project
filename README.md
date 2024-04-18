@@ -16,19 +16,6 @@
 
 ![xdragonball6's github stats](https://github-readme-stats.vercel.app/api?username=xdragonball6&show_icons=true)
 </div>
-<br>
-<div align=center>
-	<h3>📱 Contact & Portfolio 📱</h3>
-</div>
-<div align=center>
-	<a href="mailto:xdragonball6@gmail.com">
-		<img src="https://img.shields.io/badge/Mail-30B980?style=for-the-badge&logo=Google&logoColor=white" />
-	</a>
-	<a href="https://bronze-galaxy-c17.notion.site/cd5ea8c4ca114ec89dbf29ff9a56c67a?pvs=4">
-		<img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white" />
-	</a>
-	<br>
-</div>
 </div>
 <!---
 xdragonball6/xdragonball6 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
