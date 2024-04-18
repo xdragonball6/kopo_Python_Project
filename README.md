@@ -6,8 +6,13 @@
  <br/>
 <br/>
 
-<div align=center>
-
+<div align="center">
+	<p>💬 Languages & OS💬</p>
+		<img src="https://img.shields.io/badge/Java-C01818?style=flat&logo=coffeescript&logoColor=white" />
+		<img src="https://img.shields.io/badge/Swift-F05138?style=flat&logo=Swift&logoColor=white" />
+		<img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=Python&logoColor=white" />
+		<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
+		<img src="https://img.shields.io/badge/Dart-0175C2?style=flat&logo=Dart&logoColor=white" />
 <br/>
 </div>
 </div>
