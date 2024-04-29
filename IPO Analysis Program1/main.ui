@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>main_2</class>
+ <widget class="QMainWindow" name="main_2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1469</width>
+    <height>866</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1469</width>
+    <height>866</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1469</width>
+    <height>866</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="main">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1471</width>
+      <height>821</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideMiddle</enum>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>업종별 분석</string>
+     </attribute>
+     <widget class="QColumnView" name="summary1">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>0</y>
+        <width>421</width>
+        <height>781</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="secAllBtn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>전체 조회</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="secReadyBtn">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>심사 대기(접수완료)</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="secFailBtn">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>IPO 탈락</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="secOkBtn">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>IPO 승인</string>
+      </property>
+     </widget>
+     <widget class="QUndoView" name="graph1">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1041</width>
+        <height>781</height>
+       </rect>
+      </property>
+     </widget>
+     <zorder>graph1</zorder>
+     <zorder>summary1</zorder>
+     <zorder>secAllBtn</zorder>
+     <zorder>secReadyBtn</zorder>
+     <zorder>secFailBtn</zorder>
+     <zorder>secOkBtn</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>위치별 분석</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>880</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_6">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>880</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_7">
+      <property name="geometry">
+       <rect>
+        <x>1000</x>
+        <y>880</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_8">
+      <property name="geometry">
+       <rect>
+        <x>1260</x>
+        <y>880</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+     <widget class="QColumnView" name="columnView_2">
+      <property name="geometry">
+       <rect>
+        <x>1520</x>
+        <y>200</y>
+        <width>421</width>
+        <height>781</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addAllBtn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>전체 조회</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addReadyBtn">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>심사 대기(접수완료)</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addFailBtn">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>IPO 탈락</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addOkBtn">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>IPO 승인</string>
+      </property>
+     </widget>
+     <widget class="QColumnView" name="summary2">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>0</y>
+        <width>421</width>
+        <height>781</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QUndoView" name="graph2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1041</width>
+        <height>781</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="map1">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>10</y>
+        <width>671</width>
+        <height>661</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="map2">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>560</y>
+        <width>131</width>
+        <height>81</height>
+       </rect>
+      </property>
+     </widget>
+     <zorder>graph2</zorder>
+     <zorder>pushButton_5</zorder>
+     <zorder>pushButton_6</zorder>
+     <zorder>pushButton_7</zorder>
+     <zorder>pushButton_8</zorder>
+     <zorder>columnView_2</zorder>
+     <zorder>addAllBtn</zorder>
+     <zorder>addReadyBtn</zorder>
+     <zorder>addFailBtn</zorder>
+     <zorder>addOkBtn</zorder>
+     <zorder>summary2</zorder>
+     <zorder>map1</zorder>
+     <zorder>map2</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>상장주선인(파트너사) 분석</string>
+     </attribute>
+     <widget class="QPushButton" name="paAllBtn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>전체 조회</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="okBtn">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>승인 횟수 기준</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="okRateBtn">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>승인 성공률 기준</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="revBtn">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>680</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Reverse</string>
+      </property>
+     </widget>
+     <widget class="QColumnView" name="summary3">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>0</y>
+        <width>421</width>
+        <height>781</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QUndoView" name="graph3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1041</width>
+        <height>781</height>
+       </rect>
+      </property>
+     </widget>
+     <zorder>graph3</zorder>
+     <zorder>paAllBtn</zorder>
+     <zorder>okBtn</zorder>
+     <zorder>okRateBtn</zorder>
+     <zorder>revBtn</zorder>
+     <zorder>summary3</zorder>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1469</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>기업공개(신규상장)심사 신청 기업 분석 프로그램</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
