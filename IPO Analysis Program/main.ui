@@ -49,7 +49,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <property name="elideMode">
      <enum>Qt::ElideMiddle</enum>
@@ -161,12 +161,23 @@
        </rect>
       </property>
      </widget>
+     <widget class="QTableView" name="secTable">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>0</y>
+        <width>421</width>
+        <height>781</height>
+       </rect>
+      </property>
+     </widget>
      <zorder>graph1</zorder>
      <zorder>summary1</zorder>
      <zorder>secAllBtn</zorder>
      <zorder>secReadyBtn</zorder>
      <zorder>secFailBtn</zorder>
      <zorder>secOkBtn</zorder>
+     <zorder>secTable</zorder>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -390,6 +401,16 @@
        </url>
       </property>
      </widget>
+     <widget class="QTableView" name="addTable">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>0</y>
+        <width>421</width>
+        <height>781</height>
+       </rect>
+      </property>
+     </widget>
      <zorder>graph2</zorder>
      <zorder>pushButton_5</zorder>
      <zorder>pushButton_6</zorder>
@@ -403,6 +424,7 @@
      <zorder>summary2</zorder>
      <zorder>map_label</zorder>
      <zorder>mapGraph</zorder>
+     <zorder>addTable</zorder>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -523,6 +545,16 @@
        </url>
       </property>
      </widget>
+     <widget class="QTableView" name="paTable">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>0</y>
+        <width>421</width>
+        <height>781</height>
+       </rect>
+      </property>
+     </widget>
      <zorder>graph3</zorder>
      <zorder>paAllBtn</zorder>
      <zorder>okBtn</zorder>
@@ -530,6 +562,7 @@
      <zorder>revBtn</zorder>
      <zorder>summary3</zorder>
      <zorder>gamsain_webEngineView</zorder>
+     <zorder>paTable</zorder>
     </widget>
    </widget>
   </widget>
