@@ -362,24 +362,32 @@
        </rect>
       </property>
      </widget>
-     <widget class="QTableWidget" name="map1">
+     <widget class="QLabel" name="map_label">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>10</y>
-        <width>671</width>
-        <height>661</height>
+        <x>120</x>
+        <y>160</y>
+        <width>151</width>
+        <height>161</height>
        </rect>
       </property>
+      <property name="text">
+       <string/>
+      </property>
      </widget>
-     <widget class="QTableWidget" name="map2">
+     <widget class="QWebEngineView" name="mapGraph">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>560</y>
-        <width>131</width>
-        <height>81</height>
+        <x>10</x>
+        <y>10</y>
+        <width>1021</width>
+        <height>671</height>
        </rect>
+      </property>
+      <property name="url">
+       <url>
+        <string>about:blank</string>
+       </url>
       </property>
      </widget>
      <zorder>graph2</zorder>
@@ -393,8 +401,8 @@
      <zorder>addFailBtn</zorder>
      <zorder>addOkBtn</zorder>
      <zorder>summary2</zorder>
-     <zorder>map1</zorder>
-     <zorder>map2</zorder>
+     <zorder>map_label</zorder>
+     <zorder>mapGraph</zorder>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -527,6 +535,13 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebEngineView</class>
+   <extends>QWidget</extends>
+   <header location="global">QtWebEngineWidgets/QWebEngineView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
