@@ -181,6 +181,19 @@
        </font>
       </property>
      </widget>
+     <widget class="QLabel" name="label_chart">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>701</width>
+        <height>541</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
      <zorder>graph1</zorder>
      <zorder>summary1</zorder>
      <zorder>secAllBtn</zorder>
@@ -188,6 +201,7 @@
      <zorder>secFailBtn</zorder>
      <zorder>secOkBtn</zorder>
      <zorder>secTable</zorder>
+     <zorder>label_chart</zorder>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -602,7 +616,7 @@
      <x>0</x>
      <y>0</y>
      <width>1469</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">

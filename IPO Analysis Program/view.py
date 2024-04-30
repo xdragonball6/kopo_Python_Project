@@ -1,6 +1,7 @@
 import os, sys
 import traceback
 from patest import Gamsain
+from sectors import sectors
 from add import add
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
@@ -17,6 +18,12 @@ class MainDialog(QMainWindow, MainUI):
             super().__init__()
             self.setupUi(self)  # This must come before any usage of UI elements
             self.setWindowTitle('Main')
+            self.sector = sectors()
+            self.secAllBtn.clicked.connect(lambda: self.sector.secAllBtn_clicked(self))
+            self.secAllBtn.clicked.connect(lambda: self.sector.secReadyBtn_clicked(self))
+            self.secAllBtn.clicked.connect(lambda: self.sector.secFailBtn_clicked(self))
+            self.secAllBtn.clicked.connect(lambda: self.sector.secOkBtn_clicked(self))
+
             self.add = add()
 
             self.add.btn(self)
