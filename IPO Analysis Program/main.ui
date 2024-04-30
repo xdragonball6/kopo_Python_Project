@@ -161,7 +161,10 @@
        </rect>
       </property>
      </widget>
-     <widget class="QTableView" name="secTable">
+     <widget class="QTableWidget" name="secTable">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>1040</x>
@@ -169,6 +172,13 @@
         <width>421</width>
         <height>781</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
       </property>
      </widget>
      <zorder>graph1</zorder>
@@ -401,7 +411,10 @@
        </url>
       </property>
      </widget>
-     <widget class="QTableView" name="addTable">
+     <widget class="QTableWidget" name="addTable">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>1040</x>
@@ -409,6 +422,13 @@
         <width>421</width>
         <height>781</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
       </property>
      </widget>
      <zorder>graph2</zorder>
@@ -545,7 +565,10 @@
        </url>
       </property>
      </widget>
-     <widget class="QTableView" name="paTable">
+     <widget class="QTableWidget" name="paTable">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>1040</x>
@@ -553,6 +576,13 @@
         <width>421</width>
         <height>781</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
       </property>
      </widget>
      <zorder>graph3</zorder>
