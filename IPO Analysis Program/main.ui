@@ -49,7 +49,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <property name="elideMode">
      <enum>Qt::ElideMiddle</enum>
@@ -508,12 +508,28 @@
        </rect>
       </property>
      </widget>
+     <widget class="QWebEngineView" name="gamsain_webEngineView">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>80</y>
+        <width>851</width>
+        <height>501</height>
+       </rect>
+      </property>
+      <property name="url">
+       <url>
+        <string>about:blank</string>
+       </url>
+      </property>
+     </widget>
      <zorder>graph3</zorder>
      <zorder>paAllBtn</zorder>
      <zorder>okBtn</zorder>
      <zorder>okRateBtn</zorder>
      <zorder>revBtn</zorder>
      <zorder>summary3</zorder>
+     <zorder>gamsain_webEngineView</zorder>
     </widget>
    </widget>
   </widget>

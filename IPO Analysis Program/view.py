@@ -1,10 +1,10 @@
 import os, sys
 import traceback
-
+from patest import Gamsain
 from add import add
 from PyQt5 import uic
 from PyQt5.QtWidgets import QMainWindow, QApplication
-
+import pandas as pd
 
 # 경로 지정?
 root = os.path.dirname(os.path.abspath(__file__))
@@ -20,6 +20,9 @@ class MainDialog(QMainWindow, MainUI):
             self.add = add()
 
             self.add.btn(self)
+            self.gamasain_instance = Gamsain()
+            df = pd.read_csv("IPO현황_최종.csv", encoding="cp949")
+            self.gamasain_instance.create_gamsain_chart(self, df['주선인'])
 
 
 
