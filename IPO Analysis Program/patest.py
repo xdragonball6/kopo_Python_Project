@@ -3,7 +3,6 @@ import traceback
 
 import pandas as pd
 import plotly.graph_objects as go
-import self
 from PyQt5.QtCore import QUrl
 
 # Test 클래스 정의
