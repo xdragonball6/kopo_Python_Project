@@ -9,25 +9,19 @@ import sec
 class sectors:
     count = 0
     def secAllBtn_clicked(self, dialog):
-        try:
-            self.count = 1
-            sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df, self.count)
-            m.summary(self, dialog, m.total_df_file)
-            dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
-
-            pixmap = QPixmap('전체.png')
-            dialog.label_chart.setPixmap(pixmap)
-            dialog.label_chart.show()
-        except Exception as e:
-            print(e)
-            print(traceback.print_exc())
+        self.count = 1
+        sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df, self.count)
+        m.summary(self, dialog, m.total_df_file)
+        dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        pixmap = QPixmap('전체업종.png')
+        dialog.label_chart.setPixmap(pixmap)
+        dialog.label_chart.show()
 
     def secReadyBtn_clicked(self, dialog):
         self.count = 2
         sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df, self.count)
         m.summary(self, dialog, m.ing_df_file)
         dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
-
         pixmap = QPixmap('심사중.png')
         dialog.label_chart.setPixmap(pixmap)
         dialog.label_chart.show()
@@ -37,7 +31,6 @@ class sectors:
         sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df, self.count)
         m.summary(self, dialog, m.fail_df_file)
         dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
-
         pixmap = QPixmap('심사실패.png')
         dialog.label_chart.setPixmap(pixmap)
         dialog.label_chart.show()
@@ -47,7 +40,6 @@ class sectors:
         sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df, self.count)
         m.summary(self, dialog, m.success_df_file)
         dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
-
         pixmap = QPixmap('심사성공.png')
         dialog.label_chart.setPixmap(pixmap)
         dialog.label_chart.show()
@@ -61,5 +53,3 @@ class sectors:
             m.fail_df_file.to_excel('./IPO 실패 기업 수 데이터_업종별.xlsx')
         elif self.count == 4:
             m.success_df_file.to_excel('./IPO 승인 완료 기업 수 데이터_업종별.xlsx')
-        else:
-            pass

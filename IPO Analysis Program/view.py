@@ -13,7 +13,6 @@ from PyQt5.QtWebEngineWidgets import QWebEngineView
 root = os.path.dirname(os.path.abspath(__file__))
 MainUI = uic.loadUiType(os.path.join(root, 'main.ui'))[0]
 
-
 class MainDialog(QMainWindow, MainUI):
     try:
         def __init__(self):

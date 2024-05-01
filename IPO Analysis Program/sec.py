@@ -4,6 +4,7 @@ import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn.objects as so
+
 # 한글 폰트 문제 해결
 # matplotlib은 한글 폰트를 지원하지 않음
 # os정보
@@ -38,7 +39,7 @@ def getdata():
                                    })
 
     # 컬럼명을 수정하여 차트의 범례 부분을 수정
-    df['대분류'] = df['대분류'].replace('전문, 과학 및 기술 서비스업', '전문과학기술서비스업')
+    df['대분류'] = df['대분류'].replace('전문, 과학 및 기술 서비스업', '과학기술서비스업')
 
     # 성공여부 컬럼에서 심사철회 -> 심사 미승인으로 변경
     df['성공여부'] = df['성공여부'].replace(['심사철회'], '심사미승인')
@@ -58,20 +59,19 @@ def getdata():
     return df, success_df, ing_df, fail_df
 
 def create_chart(df, success_df, ing_df, fail_df, num):
-    order = ['제조업1', '제조업2', '제조업3', '제조업4', '금융 및 보험업', '정보통신업', '전문과학기술서비스업', 'etc']
+    # 사용자 정렬
+    order = ['제조업1', '제조업2', '제조업3', '제조업4', '금융 및 보험업', '정보통신업', '과학기술서비스업', 'etc']
     fig = plt.figure(figsize=(10, 6))
+    sns.set(font="Malgun Gothic",
+            rc={"axes.unicode_minus": False},
+            style='whitegrid')
 
     if num == 1:
-        # 사용자 정렬
-        try :
-            # 전체 스택 차트 생성
-            ax1 = fig.add_subplot(1,1,1)
-            sns.countplot(df, x='대분류', hue='성공여부', order=order, ax=ax1, palette = ['#8FBC8B', '#F0E68C', '#FA8072'])
-            plt.title("전체 업종")
-            plt.tight_layout()
-        except Exception as e:
-            print(e)
-            print(traceback.format_exc())
+        # 전체 스택 차트 생성
+        ax1 = fig.add_subplot(1,1,1)
+        sns.countplot(df, x='대분류', hue='성공여부', order=order, ax=ax1, palette = ['#8FBC8B', '#F0E68C', '#FA8072'])
+        plt.title("전체 업종 법인 수")
+        plt.tight_layout()
 
         # 데이터 sortcount
         success_counts = success_df['대분류'].value_counts()
@@ -157,14 +157,14 @@ def create_chart(df, success_df, ing_df, fail_df, num):
             elif i == 7:
                 a = 4
                 rightBar(a, count)
-        plt.savefig('전체.png', bbox_inches='tight')  # 그래프를 이미지 파일로 저장
+        plt.savefig('전체업종.png', bbox_inches='tight')  # 그래프를 이미지 파일로 저장
 
     elif num == 2:
         # 심사 중 차트 생성
         plt.clf()
         ax3 = fig.add_subplot(1, 1, 1)
         sns.countplot(x='대분류', hue='성공여부', data=ing_df, order=order, dodge=False, ax=ax3, palette = ['#F0E68C'])
-        plt.title("현재 심사 중인 현황")
+        plt.title("심사 중인 법인 수")
         plt.tight_layout()
         plt.savefig('심사중.png', bbox_inches='tight')
 
@@ -173,7 +173,7 @@ def create_chart(df, success_df, ing_df, fail_df, num):
         plt.clf()
         ax4 = fig.add_subplot(1, 1, 1)
         sns.countplot(x='대분류', hue='성공여부', data=fail_df, order=order, dodge=False, ax=ax4, palette = ['#FA8072'])
-        plt.title("업종별 심사실패 현황")
+        plt.title("심사 실패 법인 수")
         plt.tight_layout()
         plt.savefig('심사실패.png', bbox_inches='tight')
 
@@ -183,7 +183,7 @@ def create_chart(df, success_df, ing_df, fail_df, num):
         ax2 = fig.add_subplot(1, 1, 1)
         sns.countplot(x='대분류', hue='성공여부', data=success_df, order=order, dodge=False, ax=ax2, palette = ['#8FBC8B'])
 
-        plt.title("업종별 심사승인 현황")
+        plt.title("심사 승인 법인 수")
         plt.tight_layout()
         plt.savefig('심사성공.png', bbox_inches='tight')
         plt.close()
@@ -212,18 +212,12 @@ class main:
     fail_df_file.columns = ['업종', '법인 수']
 
     def summary(self, dialog,  df):
-        try:
-            tableHeader = ['업종', '법인 수']
-            dialog.secTable.setRowCount(len(df))
-            dialog.secTable.setColumnCount(2)
-            dialog.secTable.setHorizontalHeaderLabels(tableHeader)
-            for i in range(len(df)):
-                for j in range(2):
-                    item = QTableWidgetItem(str(df.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
-                    dialog.secTable.setItem(i, j, item)
-            dialog.secTable.resizeColumnsToContents()   # 컬럼 사이즈를 글씨크기에 맞게 조정
-        except Exception as e:
-            print(e)
-            print(traceback.format_exc())
-
-
+        tableHeader = ['업종', '법인 수']
+        dialog.secTable.setRowCount(len(df))
+        dialog.secTable.setColumnCount(2)
+        dialog.secTable.setHorizontalHeaderLabels(tableHeader)
+        for i in range(len(df)):
+            for j in range(2):
+                item = QTableWidgetItem(str(df.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
+                dialog.secTable.setItem(i, j, item)
+        dialog.secTable.resizeColumnsToContents()   # 컬럼 사이즈를 글씨크기에 맞게 조정
