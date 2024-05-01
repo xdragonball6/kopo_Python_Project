@@ -114,8 +114,8 @@ class Gamsain:
         # print(top_10_success_rates)
         # 그래프 생성
         fig = go.Figure(data=[go.Bar(x=top_10_success_rates.index, y=top_10_success_rates.values,
-                                     text=top_10_success_rates.round(2).astype(str) + '%' + '\n'+ top_10.astype(str) + '건',
-                                     textposition='auto')])  # 'auto'는 최적 위치에 자동 배치
+                                     text=top_10_success_rates.round(2).astype(str) + '%' + '<br>'+ top_10.astype(str) + '건',
+                                     textposition='auto',textangle=0)])  # 'auto'는 최적 위치에 자동 배치
         fig.update_layout(title='성공률 주선인 Top10(상장승인 50건 이상)')
 
         # HTML 파일로 저장
