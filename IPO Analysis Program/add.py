@@ -63,17 +63,18 @@ class add:
             print(len(name))
             ban = int(df['count'][count]),  # 원의 반지름
 
-
-            if ban[0] >= 50:
-                result = 30
-            elif banNum >= 40:
-                result = 25
-            elif banNum >= 30:
-                result = 20
-            elif banNum >= 20:
+            if ban[0] >= 800:
+                result = 100
+            elif ban[0] >= 400:
+                result = 80
+            elif ban[0] >= 170:
+                result = 50
+            elif ban[0] >= 160:
+                result = 48
+            elif ban[0] >= 30:
                 result = 15
-            elif banNum >= 10:
-                result = 10
+            elif ban[0] >= 10:
+                result = 5
             else:
                 result = ban[0]
 

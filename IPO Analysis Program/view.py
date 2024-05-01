@@ -25,8 +25,8 @@ class MainDialog(QMainWindow, MainUI):
             self.secAllBtn.clicked.connect(lambda: self.sector.secOkBtn_clicked(self))
 
             self.add = add()
-
             self.add.btn(self)
+
             self.gamasain_instance = Gamsain()
             df = pd.read_csv("IPO현황_최종.csv", encoding="cp949")
             self.gamasain_instance.create_gamsain_chart(self, df['주선인'])
