@@ -66,7 +66,7 @@ def create_chart(df, success_df, ing_df, fail_df, num):
         try :
             # 전체 스택 차트 생성
             ax1 = fig.add_subplot(1,1,1)
-            sns.countplot(df, x='대분류', hue='성공여부', order=order, ax=ax1, palette='Set1')
+            sns.countplot(df, x='대분류', hue='성공여부', order=order, ax=ax1, palette = ['#8FBC8B', '#F0E68C', '#FA8072'])
             plt.title("전체 업종")
             plt.tight_layout()
         except Exception as e:
@@ -75,11 +75,8 @@ def create_chart(df, success_df, ing_df, fail_df, num):
 
         # 데이터 sortcount
         success_counts = success_df['대분류'].value_counts()
-        # print(success_counts)
         ing_counts = ing_df['대분류'].value_counts()
-        # print(ing_counts)
         fail_counts = fail_df['대분류'].value_counts()
-        print(fail_counts)
 
         # 왼쪽 그래프
         for i, count in enumerate(success_counts):
@@ -160,14 +157,13 @@ def create_chart(df, success_df, ing_df, fail_df, num):
             elif i == 7:
                 a = 4
                 rightBar(a, count)
-
         plt.savefig('전체.png', bbox_inches='tight')  # 그래프를 이미지 파일로 저장
 
     elif num == 2:
         # 심사 중 차트 생성
         plt.clf()
         ax3 = fig.add_subplot(1, 1, 1)
-        sns.countplot(x='대분류', hue='성공여부', data=ing_df, order=order, dodge=False, ax=ax3, palette='Set1')
+        sns.countplot(x='대분류', hue='성공여부', data=ing_df, order=order, dodge=False, ax=ax3, palette = ['#F0E68C'])
         plt.title("현재 심사 중인 현황")
         plt.tight_layout()
         plt.savefig('심사중.png', bbox_inches='tight')
@@ -176,7 +172,7 @@ def create_chart(df, success_df, ing_df, fail_df, num):
         # 심사 실패 차트 생성
         plt.clf()
         ax4 = fig.add_subplot(1, 1, 1)
-        sns.countplot(x='대분류', hue='성공여부', data=fail_df, order=order, dodge=False, ax=ax4, palette='Set1')
+        sns.countplot(x='대분류', hue='성공여부', data=fail_df, order=order, dodge=False, ax=ax4, palette = ['#FA8072'])
         plt.title("업종별 심사실패 현황")
         plt.tight_layout()
         plt.savefig('심사실패.png', bbox_inches='tight')
@@ -185,7 +181,7 @@ def create_chart(df, success_df, ing_df, fail_df, num):
         # 심사 승인 차트 생성
         plt.clf()  # 차트 초기화
         ax2 = fig.add_subplot(1, 1, 1)
-        sns.countplot(x='대분류', hue='성공여부', data=success_df, order=order, dodge=False, ax=ax2, palette='Set1')
+        sns.countplot(x='대분류', hue='성공여부', data=success_df, order=order, dodge=False, ax=ax2, palette = ['#8FBC8B'])
 
         plt.title("업종별 심사승인 현황")
         plt.tight_layout()
