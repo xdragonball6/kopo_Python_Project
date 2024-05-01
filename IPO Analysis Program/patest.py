@@ -35,7 +35,6 @@ class Gamsain:
             fig.write_html("감사인.html")
             html_path = os.path.abspath("감사인.html")
             dialog.gamsain_webEngineView.setUrl(QUrl.fromLocalFile(html_path))
-            print(self.df3)
             exeldf = self.df3.to_frame(name='성공횟수')
             exeldf.reset_index(inplace=True)
             exeldf.rename(columns={'index': '회사', '성공횟수': '건수'}, inplace=True)
@@ -50,7 +49,7 @@ class Gamsain:
                     item = QTableWidgetItem(str(exeldf.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
                     dialog.paTable.setItem(i, j, item)
             dialog.paTable.resizeColumnsToContents()
-            num = 1
+            self.num = 1
         except Exception as e:
             print(e)
             print(traceback.format_exc())
@@ -136,7 +135,7 @@ class Gamsain:
                 item = QTableWidgetItem(str(exeldf.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
                 dialog.paTable.setItem(i, j, item)
         dialog.paTable.resizeColumnsToContents()
-        num = 2
+        self.num = 2
 #================승인횟수 Top10==========================================================================
 
     def create_gamsain_barchart(self, dialog, column_series, threshold=0.01):
@@ -176,13 +175,13 @@ class Gamsain:
                     item = QTableWidgetItem(str(exeldf.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
                     dialog.paTable.setItem(i, j, item)
             dialog.paTable.resizeColumnsToContents()
-            num = 3
+            self.num = 3
 
         except Exception as e:
             print(e)
             print(traceback.format_exc())
 
-    def toExel(self, dialog):
+    def toExel(self):
         df = self.df4
         if self.num == 1:
             df.to_excel("IPO 상장주선인(파트너사) 승인 전체 데이터.xlsx", index=True)

@@ -39,7 +39,7 @@ class MainDialog(QMainWindow, MainUI):
             self.paAllBtn.clicked.connect(lambda: self.test_instance.create_gamsain_chart(self, df['주선인']))
             self.okRateBtn.clicked.connect(lambda: self.test_instance.create_top_success_rates_bar_chart(self, df))
             self.okBtn.clicked.connect(lambda: self.test_instance.create_gamsain_barchart(self, df['주선인']))
-            self.paDown.clicked.connect(lambda: self.test_instance.toExel(self))
+            self.paDown.clicked.connect(lambda: self.test_instance.toExel())
     except Exception as e:
         print(e)
         print(traceback.format_exc())
