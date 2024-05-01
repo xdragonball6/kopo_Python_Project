@@ -10,6 +10,7 @@ from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QAbstractItemView
 class Gamsain:
     df3 = pd.Series()
     df4 = pd.DataFrame()
+    num = 0
     def process_column(self, column_series):
         if column_series.str.contains(',').any():
             processed_values = column_series.str.split(',')
@@ -49,6 +50,7 @@ class Gamsain:
                     item = QTableWidgetItem(str(exeldf.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
                     dialog.paTable.setItem(i, j, item)
             dialog.paTable.resizeColumnsToContents()
+            num = 1
         except Exception as e:
             print(e)
             print(traceback.format_exc())
@@ -134,6 +136,7 @@ class Gamsain:
                 item = QTableWidgetItem(str(exeldf.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
                 dialog.paTable.setItem(i, j, item)
         dialog.paTable.resizeColumnsToContents()
+        num = 2
 #================승인횟수 Top10==========================================================================
 
     def create_gamsain_barchart(self, dialog, column_series, threshold=0.01):
@@ -173,7 +176,7 @@ class Gamsain:
                     item = QTableWidgetItem(str(exeldf.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
                     dialog.paTable.setItem(i, j, item)
             dialog.paTable.resizeColumnsToContents()
-
+            num = 3
 
         except Exception as e:
             print(e)
@@ -181,5 +184,9 @@ class Gamsain:
 
     def toExel(self, dialog):
         df = self.df4
-        if len(df) != 0:
-            df.to_excel("IPO 상장주선인(파트너사) 승인 성공률 기준 데이터.xlsx", index=True)
+        if self.num == 1:
+            df.to_excel("IPO 상장주선인(파트너사) 승인 전체 데이터.xlsx", index=True)
+        elif self.num == 2:
+            df.to_excel("IPO 상장주선인(파트너사) 승인 횟수 Top10 데이터.xlsx", index=True)
+        elif self.num == 3:
+            df.to_excel("IPO 상장주선인(파트너사) 승인 성공률 Top10 데이터.xlsx", index=True)
