@@ -24,9 +24,9 @@ class MainDialog(QMainWindow, MainUI):
             # -- 성준
             self.sector = sectors()
             self.secAllBtn.clicked.connect(lambda: self.sector.secAllBtn_clicked(self))
-            self.secAllBtn.clicked.connect(lambda: self.sector.secReadyBtn_clicked(self))
-            self.secAllBtn.clicked.connect(lambda: self.sector.secFailBtn_clicked(self))
-            self.secAllBtn.clicked.connect(lambda: self.sector.secOkBtn_clicked(self))
+            self.secReadyBtn.clicked.connect(lambda: self.sector.secReadyBtn_clicked(self))
+            self.secFailBtn.clicked.connect(lambda: self.sector.secFailBtn_clicked(self))
+            self.secOkBtn.clicked.connect(lambda: self.sector.secOkBtn_clicked(self))
             
             # -- 나겸
             self.add = add()

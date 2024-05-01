@@ -49,7 +49,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <property name="elideMode">
      <enum>Qt::ElideMiddle</enum>
@@ -186,12 +186,12 @@
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>701</width>
-        <height>541</height>
+        <width>1011</width>
+        <height>661</height>
        </rect>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="secDown">
@@ -640,7 +640,7 @@
      <x>0</x>
      <y>0</y>
      <width>1469</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
