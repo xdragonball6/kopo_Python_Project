@@ -1,4 +1,6 @@
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtWidgets import QAbstractItemView
+
 from sec import main as m
 import sec
 
@@ -7,6 +9,9 @@ class sectors:
     def secAllBtn_clicked(self, dialog):
         self.count = 1
         sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df)
+        m.summary(self, dialog, m.total_df_file)
+        dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+
         pixmap = QPixmap('total.png')
         dialog.label_chart.setPixmap(pixmap)
         dialog.label_chart.show()
@@ -15,6 +20,10 @@ class sectors:
     def secReadyBtn_clicked(self, dialog):
         self.count = 2
         sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df)
+        m.summary(self, dialog, m.ing_df_file)
+        dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+
+
         pixmap = QPixmap('ing.png')
         dialog.label_chart.setPixmap(pixmap)
         dialog.label_chart.show()
@@ -23,6 +32,9 @@ class sectors:
     def secFailBtn_clicked(self, dialog):
         self.count = 3
         sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df)
+        m.summary(self, dialog, m.fail_df_file)
+        dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+
         pixmap = QPixmap('fail.png')
         dialog.label_chart.setPixmap(pixmap)
         dialog.label_chart.show()
@@ -31,6 +43,9 @@ class sectors:
     def secOkBtn_clicked(self, dialog):
         self.count = 4
         sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df)
+        m.summary(self, dialog, m.success_df_file)
+        dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+
         pixmap = QPixmap('success.png')
         dialog.label_chart.setPixmap(pixmap)
         dialog.label_chart.show()

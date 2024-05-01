@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 # os정보
 import platform
 
+from PyQt5.QtWidgets import QTableWidgetItem
 # font_manager : 폰트 관리 모듈
 # rc : 폰트 변경 모듈
 from matplotlib import font_manager, rc
@@ -118,3 +119,20 @@ class main:
 
     fail_df_file = fail_df['대분류'].value_counts().reset_index()
     fail_df_file.columns = ['업종', '법인 수']
+
+    def summary(self, dialog,  df):
+        try:
+            tableHeader = ['업종', '법인 수']
+            dialog.secTable.setRowCount(len(df))
+            dialog.secTable.setColumnCount(2)
+            dialog.secTable.setHorizontalHeaderLabels(tableHeader)
+            for i in range(len(df)):
+                for j in range(2):
+                    item = QTableWidgetItem(str(df.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
+                    dialog.secTable.setItem(i, j, item)
+            dialog.secTable.resizeColumnsToContents()   # 컬럼 사이즈를 글씨크기에 맞게 조정
+        except Exception as e:
+            print(e)
+            print(traceback.format_exc())
+
+

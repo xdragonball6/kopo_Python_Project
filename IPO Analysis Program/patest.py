@@ -49,6 +49,8 @@ class Gamsain:
                     item = QTableWidgetItem(str(exeldf.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
                     dialog.paTable.setItem(i, j, item)
             dialog.paTable.resizeColumnsToContents()
+            dialog.paTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+
             self.num = 1
         except Exception as e:
             print(e)
@@ -135,6 +137,8 @@ class Gamsain:
                 item = QTableWidgetItem(str(exeldf.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
                 dialog.paTable.setItem(i, j, item)
         dialog.paTable.resizeColumnsToContents()
+        dialog.paTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+
         self.num = 2
 #================승인횟수 Top10==========================================================================
 
@@ -175,6 +179,8 @@ class Gamsain:
                     item = QTableWidgetItem(str(exeldf.iloc[i, j]))  # 문자열로 변환하여 QTableWidgetItem 생성
                     dialog.paTable.setItem(i, j, item)
             dialog.paTable.resizeColumnsToContents()
+            dialog.paTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+
             self.num = 3
 
         except Exception as e:
