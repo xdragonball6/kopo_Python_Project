@@ -194,6 +194,19 @@
        <string>TextLabel</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="secDown">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>680</y>
+        <width>421</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>데이터 다운로드(xls)</string>
+      </property>
+     </widget>
      <zorder>graph1</zorder>
      <zorder>summary1</zorder>
      <zorder>secAllBtn</zorder>
@@ -202,6 +215,7 @@
      <zorder>secOkBtn</zorder>
      <zorder>secTable</zorder>
      <zorder>label_chart</zorder>
+     <zorder>secDown</zorder>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -444,6 +458,22 @@
         <bold>false</bold>
        </font>
       </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectItems</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addDown">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>680</y>
+        <width>421</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>데이터 다운로드(xls)</string>
+      </property>
      </widget>
      <zorder>graph2</zorder>
      <zorder>pushButton_5</zorder>
@@ -459,6 +489,7 @@
      <zorder>map_label</zorder>
      <zorder>mapGraph</zorder>
      <zorder>addTable</zorder>
+     <zorder>addDown</zorder>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -599,6 +630,19 @@
        </font>
       </property>
      </widget>
+     <widget class="QPushButton" name="paDown">
+      <property name="geometry">
+       <rect>
+        <x>1040</x>
+        <y>680</y>
+        <width>421</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>데이터 다운로드(xls)</string>
+      </property>
+     </widget>
      <zorder>graph3</zorder>
      <zorder>paAllBtn</zorder>
      <zorder>okBtn</zorder>
@@ -607,6 +651,7 @@
      <zorder>summary3</zorder>
      <zorder>gamsain_webEngineView</zorder>
      <zorder>paTable</zorder>
+     <zorder>paDown</zorder>
     </widget>
    </widget>
   </widget>
@@ -616,7 +661,7 @@
      <x>0</x>
      <y>0</y>
      <width>1469</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
