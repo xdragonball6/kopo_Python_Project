@@ -3,7 +3,7 @@ import traceback
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import seaborn.objects as so
 # 한글 폰트 문제 해결
 # matplotlib은 한글 폰트를 지원하지 않음
 # os정보
@@ -57,54 +57,149 @@ def getdata():
     # print(success_df['대분류'].value_counts())
     return df, success_df, ing_df, fail_df
 
-def create_chart(df, success_df, ing_df, fail_df):
-    # 사용자 정렬
+def create_chart(df, success_df, ing_df, fail_df, num):
     order = ['제조업1', '제조업2', '제조업3', '제조업4', '금융 및 보험업', '정보통신업', '전문과학기술서비스업', 'etc']
-    # try :
-        # 전체 스택 차트 생성
-        # so.plot(df, x='대분류', color='성공여부').add(sns.Bar(), sns.Stack())
     fig = plt.figure(figsize=(10, 6))
-        # ax1 = fig.add_subplot(1,1,1)
-        # sns.countplot(x='대분류', hue='성공여부', data=df, order=order, dodge=False, ax=ax1, palette='Set1')
-        # print(df['대분류'].value_counts())
-        # plt.title("전체 업종")
-        # plt.tight_layout()
-    # except Exception as e:
-    #     print(e)
-    #     print(traceback.format_exc())
-    #
-    # ing_counts = ing_df['대분류'].value_counts()
-    # for i, count in enumerate(ing_counts):
-    #     plt.text(i, count, str(count), ha='center', va='bottom')
-    #
-    # plt.savefig('total.png', bbox_inches='tight')  # 그래프를 이미지 파일로 저장
 
-    #심사 승인 차트 생성
-    plt.clf() # 차트 초기화
-    ax2 = fig.add_subplot(1, 1, 1)
-    sns.countplot(x='대분류', hue='성공여부', data=success_df, order=order, dodge=False, ax=ax2, palette='Set1')
+    if num == 1:
+        # 사용자 정렬
+        try :
+            # 전체 스택 차트 생성
+            ax1 = fig.add_subplot(1,1,1)
+            sns.countplot(df, x='대분류', hue='성공여부', order=order, ax=ax1, palette='Set1')
+            plt.title("전체 업종")
+            plt.tight_layout()
+        except Exception as e:
+            print(e)
+            print(traceback.format_exc())
 
-    plt.title("업종별 심사승인 현황")
-    plt.tight_layout()
-    plt.savefig('success.png', bbox_inches='tight')
+        # 데이터 sortcount
+        success_counts = success_df['대분류'].value_counts()
+        # print(success_counts)
+        ing_counts = ing_df['대분류'].value_counts()
+        # print(ing_counts)
+        fail_counts = fail_df['대분류'].value_counts()
+        print(fail_counts)
 
-    # 심사 중 차트 생성
-    plt.clf()
-    ax3 = fig.add_subplot(1, 1, 1)
-    sns.countplot(x='대분류', hue='성공여부', data=ing_df, order=order, dodge=False, ax=ax3, palette='Set1')
-    plt.title("현재 심사 중인 현황")
-    plt.tight_layout()
-    plt.savefig('ing.png', bbox_inches='tight')
+        # 왼쪽 그래프
+        for i, count in enumerate(success_counts):
+            if i == 0:
+                a = 4
+                leftBar(a, count)
+            elif i == 1:
+                a = 3
+                leftBar(a, count)
+            elif i == 2:
+                a = 2
+                leftBar(a, count)
+            elif i == 3:
+                a = 5
+                leftBar(a, count)
+            elif i == 4:
+                a = 1
+                leftBar(a, count)
+            elif i == 5:
+                a = 0
+                leftBar(a, count)
+            elif i == 6:
+                a = 7
+                leftBar(a, count)
+            elif i == 7:
+                a = 6
+                leftBar(a, count)
 
-    # 심사 실패 차트 생성
-    plt.clf()
-    ax4 = fig.add_subplot(1, 1, 1)
-    sns.countplot(x='대분류', hue='성공여부', data=fail_df, order=order, dodge=False, ax=ax4, palette='Set1')
-    plt.title("업종별 심사실패 현황")
-    plt.tight_layout()
-    plt.savefig('fail.png', bbox_inches='tight')
-    plt.close()
+        # 가운데 그래프
+        for i, count in enumerate(ing_counts):
+            if i == 0:
+                a = 5
+                centerBar(a, count)
+            elif i == 1:
+                a = 3
+                centerBar(a, count)
+            elif i == 2:
+                a = 2
+                centerBar(a, count)
+            elif i == 3:
+                a = 0
+                centerBar(a, count)
+            elif i == 4:
+                a = 1
+                centerBar(a, count)
+            elif i == 5:
+                a = 4
+                centerBar(a, count)
+            elif i == 6:
+                a = 6
+                centerBar(a, count)
+            elif i == 7:
+                a = 7
+                centerBar(a, count)
+        # 오른쪽 그래프
+        for i, count in enumerate(fail_counts):
+            if i == 0:
+                a = 2
+                rightBar(a, count)
+            elif i == 1:
+                a = 1
+                rightBar(a, count)
+            elif i == 2:
+                a = 5
+                rightBar(a, count)
+            elif i == 3:
+                a = 3
+                rightBar(a, count)
+            elif i == 4:
+                a = 0
+                rightBar(a, count)
+            elif i == 5:
+                a = 6
+                rightBar(a, count)
+            elif i == 6:
+                a = 7
+                rightBar(a, count)
+            elif i == 7:
+                a = 4
+                rightBar(a, count)
 
+        plt.savefig('전체.png', bbox_inches='tight')  # 그래프를 이미지 파일로 저장
+
+    elif num == 2:
+        # 심사 중 차트 생성
+        plt.clf()
+        ax3 = fig.add_subplot(1, 1, 1)
+        sns.countplot(x='대분류', hue='성공여부', data=ing_df, order=order, dodge=False, ax=ax3, palette='Set1')
+        plt.title("현재 심사 중인 현황")
+        plt.tight_layout()
+        plt.savefig('심사중.png', bbox_inches='tight')
+
+    elif num == 3:
+        # 심사 실패 차트 생성
+        plt.clf()
+        ax4 = fig.add_subplot(1, 1, 1)
+        sns.countplot(x='대분류', hue='성공여부', data=fail_df, order=order, dodge=False, ax=ax4, palette='Set1')
+        plt.title("업종별 심사실패 현황")
+        plt.tight_layout()
+        plt.savefig('심사실패.png', bbox_inches='tight')
+
+    elif num == 4:
+        # 심사 승인 차트 생성
+        plt.clf()  # 차트 초기화
+        ax2 = fig.add_subplot(1, 1, 1)
+        sns.countplot(x='대분류', hue='성공여부', data=success_df, order=order, dodge=False, ax=ax2, palette='Set1')
+
+        plt.title("업종별 심사승인 현황")
+        plt.tight_layout()
+        plt.savefig('심사성공.png', bbox_inches='tight')
+        plt.close()
+
+def leftBar(a, count):
+    plt.text(a, count, str(count), ha='right', va='bottom')
+
+def centerBar(a, count):
+    plt.text(a, count, str(count), ha='right', va='bottom')
+
+def rightBar(a, count):
+    plt.text(a, count, str(count), ha='left', va='bottom')
 class main:
     df, success_df, ing_df, fail_df = getdata()
 

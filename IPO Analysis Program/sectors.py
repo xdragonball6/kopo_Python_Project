@@ -1,3 +1,5 @@
+import traceback
+
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QAbstractItemView
 
@@ -7,49 +9,48 @@ import sec
 class sectors:
     count = 0
     def secAllBtn_clicked(self, dialog):
-        self.count = 1
-        sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df)
-        m.summary(self, dialog, m.total_df_file)
-        dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        try:
+            self.count = 1
+            sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df, self.count)
+            m.summary(self, dialog, m.total_df_file)
+            dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
-        pixmap = QPixmap('total.png')
-        dialog.label_chart.setPixmap(pixmap)
-        dialog.label_chart.show()
-        self.secDown_clicked()
+            pixmap = QPixmap('전체.png')
+            dialog.label_chart.setPixmap(pixmap)
+            dialog.label_chart.show()
+        except Exception as e:
+            print(e)
+            print(traceback.print_exc())
 
     def secReadyBtn_clicked(self, dialog):
         self.count = 2
-        sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df)
+        sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df, self.count)
         m.summary(self, dialog, m.ing_df_file)
         dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
-
-        pixmap = QPixmap('ing.png')
+        pixmap = QPixmap('심사중.png')
         dialog.label_chart.setPixmap(pixmap)
         dialog.label_chart.show()
-        self.secDown_clicked()
 
     def secFailBtn_clicked(self, dialog):
         self.count = 3
-        sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df)
+        sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df, self.count)
         m.summary(self, dialog, m.fail_df_file)
         dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
-        pixmap = QPixmap('fail.png')
+        pixmap = QPixmap('심사실패.png')
         dialog.label_chart.setPixmap(pixmap)
         dialog.label_chart.show()
-        self.secDown_clicked()
 
     def secOkBtn_clicked(self, dialog):
         self.count = 4
-        sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df)
+        sec.create_chart(m.df, m.success_df, m.ing_df, m.fail_df, self.count)
         m.summary(self, dialog, m.success_df_file)
         dialog.secTable.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
-        pixmap = QPixmap('success.png')
+        pixmap = QPixmap('심사성공.png')
         dialog.label_chart.setPixmap(pixmap)
         dialog.label_chart.show()
-        self.secDown_clicked()
 
     def secDown_clicked(self):
         if self.count == 1:

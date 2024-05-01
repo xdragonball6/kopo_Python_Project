@@ -27,7 +27,8 @@ class MainDialog(QMainWindow, MainUI):
             self.secReadyBtn.clicked.connect(lambda: self.sector.secReadyBtn_clicked(self))
             self.secFailBtn.clicked.connect(lambda: self.sector.secFailBtn_clicked(self))
             self.secOkBtn.clicked.connect(lambda: self.sector.secOkBtn_clicked(self))
-            
+            self.secDown.clicked.connect(lambda: self.sector.secDown_clicked())
+
             # -- 나겸
             self.add = add()
             self.add.btn(self)
