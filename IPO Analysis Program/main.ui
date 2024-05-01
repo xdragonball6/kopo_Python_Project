@@ -49,7 +49,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <property name="elideMode">
      <enum>Qt::ElideMiddle</enum>
@@ -500,7 +500,7 @@
        <rect>
         <x>0</x>
         <y>680</y>
-        <width>261</width>
+        <width>351</width>
         <height>101</height>
        </rect>
       </property>
@@ -518,9 +518,9 @@
      <widget class="QPushButton" name="okBtn">
       <property name="geometry">
        <rect>
-        <x>260</x>
+        <x>350</x>
         <y>680</y>
-        <width>261</width>
+        <width>351</width>
         <height>101</height>
        </rect>
       </property>
@@ -538,9 +538,9 @@
      <widget class="QPushButton" name="okRateBtn">
       <property name="geometry">
        <rect>
-        <x>520</x>
+        <x>700</x>
         <y>680</y>
-        <width>261</width>
+        <width>341</width>
         <height>101</height>
        </rect>
       </property>
@@ -553,26 +553,6 @@
       </property>
       <property name="text">
        <string>승인 성공률 기준</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="revBtn">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>680</y>
-        <width>261</width>
-        <height>101</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>18</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Reverse</string>
       </property>
      </widget>
      <widget class="QColumnView" name="summary3">
@@ -647,7 +627,6 @@
      <zorder>paAllBtn</zorder>
      <zorder>okBtn</zorder>
      <zorder>okRateBtn</zorder>
-     <zorder>revBtn</zorder>
      <zorder>summary3</zorder>
      <zorder>gamsain_webEngineView</zorder>
      <zorder>paTable</zorder>
